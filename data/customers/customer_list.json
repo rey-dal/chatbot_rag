@@ -1,0 +1,22 @@
+{
+    "metadata": {
+        "last_updated": "2025-01-08",
+        "description": "List of current customers with their usage information"
+    },
+    "customers": [
+        {
+            "name": "AMEX",
+            "type": "Travel Management Company",
+            "region": "Global",
+            "modules_used": ["All Fares", "Hotel Booking", "Flight Search"],
+            "active_since": "2020-01-01"
+        },
+        {
+            "name": "Expedia",
+            "type": "Online Travel Agency",
+            "region": "Global",
+            "modules_used": ["Flight Search", "Hotel Booking"],
+            "active_since": "2019-03-15"
+        }
+    ]
+}

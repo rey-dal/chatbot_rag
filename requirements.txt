@@ -1,0 +1,10 @@
+langchain==0.0.352
+transformers==4.36.2
+torch
+sentence-transformers>=2.6.1
+faiss-cpu
+pandas==2.1.4
+numpy>=1.26.0
+python-dotenv==1.0.0
+accelerate==0.25.0
+bitsandbytes==0.41.3

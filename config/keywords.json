@@ -1,0 +1,40 @@
+{
+    "core_concepts": {
+        "SECO": "Self-service booking tool for travel agents",
+        "DAN": "Data Analytics team",
+        "PM": "Product Manager",
+        "All Fares": "Module for fare comparison"
+    },
+    "modules": [
+        "All Fares",
+        "Hotel Booking",
+        "Flight Search",
+        "Train Booking",
+        "Car Rental",
+        "Cruise Booking"
+    ],
+    "metrics": [
+        "usage_count",
+        "search_volume",
+        "booking_rate",
+        "response_time",
+        "error_rate",
+        "user_satisfaction"
+    ],
+    "time_related_terms": [
+        "lately",
+        "since",
+        "around",
+        "recent",
+        "last month",
+        "year to date",
+        "YTD"
+    ],
+    "performance_indicators": [
+        "better performing",
+        "behavior change",
+        "usage pattern",
+        "adoption rate",
+        "engagement"
+    ]
+}

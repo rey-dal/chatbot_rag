@@ -1,0 +1,40 @@
+{
+    "metadata": {
+        "last_updated": "2025-01-08",
+        "description": "Documentation of modules and their features"
+    },
+    "modules": [
+        {
+            "name": "All Fares",
+            "description": "Comprehensive fare comparison tool for travel agents",
+            "key_features": [
+                "Real-time fare comparison",
+                "Multi-airline search",
+                "Fare rules display",
+                "Booking class availability"
+            ],
+            "metrics_tracked": [
+                "search_volume",
+                "booking_conversion_rate",
+                "response_time",
+                "error_rate"
+            ]
+        },
+        {
+            "name": "Hotel Booking",
+            "description": "Hotel reservation and management system",
+            "key_features": [
+                "Global hotel inventory",
+                "Room type comparison",
+                "Rate shopping",
+                "Booking modification"
+            ],
+            "metrics_tracked": [
+                "search_volume",
+                "booking_rate",
+                "cancellation_rate",
+                "average_stay_duration"
+            ]
+        }
+    ]
+}
