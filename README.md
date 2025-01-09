@@ -148,11 +148,12 @@ python src/rag_engine.py
 The chatbot can answer questions like:
 
 - "What modules does AMEX use?"
-- "Show me the features of the Hotel Booking module"
 - "Which customers are using Flight Search?"
 - "When did Expedia become our customer?"
+...
 
-# Query about customer modules
+Examples:
+
 Q: "What modules does AMEX use?"
 A: "AMEX currently uses three core modules:
     - All Fares
@@ -160,7 +161,6 @@ A: "AMEX currently uses three core modules:
     - Flight Search
    They've been an active customer since 2020."
 
-# Query about module features
 Q: "Tell me about the Hotel Booking module"
 A: "The Hotel Booking module offers:
     - Global hotel inventory access
@@ -168,62 +168,35 @@ A: "The Hotel Booking module offers:
     - Rate comparison
     - Booking modification capabilities"
 
-### 2. Analytics Queries
-# Usage statistics **not fonctional**
-Q: "Which customers have the highest monthly searches?"
-A: "Based on current data:
-    1. Expedia (2.8M searches/month)
-    2. AMEX (1.5M searches/month)
-    3. BCD Travel (900K searches/month)"
-
 # Model Parameters
 
-The system uses several important parameters for text generation:
+- `do_sample` (True): Controls generation strategy
+  - True = Use sampling for creative responses
+  - False = Use deterministic decoding (greedy/beam search)
 
 - `temperature` (0.7): Controls response randomness
-  - 0.0 = deterministic
-  - 1.0 = very random
+  - 0.0 = deterministic, exact responses
+  - 1.0 = random, creative responses
   
 - `top_p` (0.95): Nucleus sampling parameter
-  - Higher values = more diverse responses
-  - Lower values = more focused responses
-  
+  - Controls diversity of generated text
+  - Higher values (>0.9) = more diverse responses
+  - Lower values (<0.9) = more focused responses
+
+- `num_beams`: Number of beams for beam search
+  - Higher values = more thorough search
+  - Typically 4-5 beams for good results
+  - Only used when do_sample=False
+
+- `early_stopping`: Stop generation early
+  - True = Stop when all beams reach end token
+  - Helps prevent unnecessary computation
+  - Used with beam search for efficiency
+
+- `max_length`: Maximum length of generated text
+  - Longer texts allow more detailed responses
+  - Should match model's context window
+
 - `repetition_penalty` (1.15): Prevents repetitive text
   - Values > 1.0 reduce repetition
   - Higher values = stronger penalty
-
-## Performance Considerations
-
-1. **Vector Search Optimization**
-   - FAISS index type selection based on dataset size
-   - Batch processing for large document sets
-   - Caching frequently accessed vectors
-
-2. **Memory Management**
-   - Efficient document loading
-   - Batch processing of large datasets
-   - Regular garbage collection
-
-3. **Response Time**
-   - Asynchronous processing where possible
-   - Optimized context window size
-   - Caching of common queries
-
-## Future Improvements
-
-1. **Model Upgrades**
-   - Integration with more powerful LLMs
-   - Fine-tuning on domain-specific data
-   - Multi-language support
-
-2. **Feature Additions**
-   - Real-time data updates
-   - Interactive visualizations
-   - Automated report generation
-
-3. **Performance Optimization**
-   - Distributed vector search
-   - Response caching
-   - Query optimization
-
-4. **Data augmentation**
