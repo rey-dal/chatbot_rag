@@ -2,16 +2,7 @@
 
 A chatbot system that helps Product Managers understand data through natural language queries. The system uses RAG (Retrieval-Augmented Generation) to combine structured data with language model capabilities.
 
-## Features
-
-- Natural language understanding of product and analytics queries
-- Semantic search across customer and module data
-- Detailed insights with confidence scores
-- Support for time-based queries and trend analysis
-
-## Technical Architecture
-
-### 1. RAG (Retrieval-Augmented Generation) System
+## Architecture
 
 The system combines three key components to provide accurate and contextual responses:
 
@@ -36,16 +27,6 @@ The system combines three key components to provide accurate and contextual resp
 #### b. Language Model Integration
 - Uses a pre-trained language model for natural language understanding
 - Current implementation: OPT-350M (can be upgraded to larger models)
-- Key parameters:
-  - `temperature`: Controls response randomness (0.7)
-  - `top_p`: Nucleus sampling for diverse responses (0.95)
-  - `repetition_penalty`: Prevents redundant text (1.15)
-
-#### c. Context Management
-- Maintains conversation context
-- Handles time-based queries
-- Manages domain-specific vocabulary
-- Combines multiple data sources for comprehensive answers
 
 ### 2. Data Structure
 
